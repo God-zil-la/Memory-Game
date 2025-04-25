@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Memory Game</title>
+
+  <!-- Link to your external CSS (make sure the path is correct) -->
+  <link rel="stylesheet" href="assets/css/styles.css"/>
+<link rel="icon" href="assets/favicon/favicon.ico" type="image/x-icon"/>
+
+  <!-- Load Firebase (Compat versions) BEFORE your custom script -->
+  <!-- These must come before script.js so firebase is defined -->
+  <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-database-compat.js"></script>
+</head>
+<body>
+  <header>
+    <h1>How Good Is Your Memory?</h1>
+    
+    <!-- Game Info (IDs match your script.js) -->
+    <div class="game-info">
+      <p>Moves: <span id="movesCount">0</span></p>
+      <p>Time: <span id="timeCount">0</span>s</p>
+      <p id="bestRecord">Best: N/A</p>
+
+      <label for="difficulty">Difficulty:</label>
+      <select id="difficulty">
+        <option value="8" selected>Easy (8 cards)</option>
+        <option value="12">Normal (12 cards)</option>
+        <option value="24">Hard (24 cards)</option>
+      </select>
+
+      <button id="resetBtn">Reset Game</button>
+      <!-- Hidden until a new high score is set -->
+      <input type="text" id="bestNameInput" class="hidden" placeholder="Enter your name">
+  </div>
+  </header>
+
+  <main>
+    <!-- Game board container with correct ID -->
+    <section class="game-container" id="gameContainer">
+      <!-- A heading here to satisfy validators (hidden if desired) -->
+      <h2 class="visually-hidden">Memory Game Board</h2>
+      <!-- Cards are dynamically inserted by script.js -->
+    </section>
+  </main>
+
+  <footer>
+    <p>Developed by Mr.Husse</p>
+  </footer>
+
+  <!-- Load your custom script LAST -->
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
